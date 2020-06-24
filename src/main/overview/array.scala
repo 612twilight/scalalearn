@@ -1,5 +1,7 @@
 package overview
 
+import Array._
+
 object array {
   def handle(): Unit = {
     var myList = Array(1.9, 2.9, 3.4, 3.5)
@@ -22,8 +24,25 @@ object array {
       if (myList(i) > max) max = myList(i);
     }
     println("最大值为 " + max);
+  }
 
+  def multi_array(): Unit = {
+    var myMatrix = ofDim[Int](3, 3)
+
+    // 创建矩阵
+    for (i <- 0 to 2) {
+      for (j <- 0 to 2) {
+        myMatrix(i)(j) = j;
+      }
+    }
+
+    // 打印二维阵列
+    for (i <- 0 to 2) {
+      for (j <- 0 to 2) {
+        print(" " + myMatrix(i)(j));
+      }
+      println();
+    }
   }
 }
 
-}
